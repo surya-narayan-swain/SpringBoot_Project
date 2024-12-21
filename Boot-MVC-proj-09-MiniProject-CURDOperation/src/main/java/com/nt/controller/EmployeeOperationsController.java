@@ -44,54 +44,7 @@ public class EmployeeOperationsController {
 		return "register_employee";
 	}
 
-	/*@PostMapping("/emp_add")
-	public String saveEmployee(@ModelAttribute("emp")Employee emp,Map<String,Object> map)
-	{
-		
-		//use service
-		String msg=empService.registerEmployee(emp);
-	Iterable<Employee> itEmps=empService.getAllEmployees();
-	//keep the result in modelattribute
-	map.put("resultMsg",msg);
-	map.put("empsList",itEmps);
 	
-	//return LVN
-	return "show_employee_report";
-	
-	}*/
-
-	/*@PostMapping("/emp_add") //form sybmission related to add empployee operation
-	public String saveEmployee(@ModelAttribute("emp")Employee emp,Map<String,Object> map)
-	{
-		
-		//use service
-		String msg=empService.registerEmployee(emp);
-	//Iterable<Employee> itEmps=empService.getAllEmployees();
-	//keep the result in modelattribute
-	map.put("resultMsg",msg);
-	//map.put("empsList",itEmps);
-	
-	//return LVN
-	return "redirect:report";     //(R--Redirect)
-	
-	}*/
-
-	/*@PostMapping("/emp_add") //form sybmission related to add empployee operation
-	public String saveEmployee(@ModelAttribute("emp")Employee emp,RedirectAttributes attrs)
-	{
-		
-		//use service
-		String msg=empService.registerEmployee(emp);
-	//Iterable<Employee> itEmps=empService.getAllEmployees();
-	//keep the result in modelattribute
-	attrs.addFlashAttribute("resultMsg",msg);
-	//map.put("empsList",itEmps);
-	
-	//return LVN
-	return "redirect:report";     //(R--Redirect)
-	
-	}
-	*/
 
 	@PostMapping("/emp_add") // form sybmission related to add empployee operation
 	public String saveEmployee(@ModelAttribute("emp") Employee emp, HttpSession ses) {
